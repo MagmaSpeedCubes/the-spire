@@ -170,5 +170,5 @@ Spire: top of the tower, no major risks but extremely challenging to navigate
 Checkpoints: base of spire, top of spire
 
 Reaching the top of the spire immediately ends a run
-runs are scored by time divided by the height of the highest reached checkpoint
+runs are scored by the highest reached checkpoint
 all runs that reach the top of the spire are recorded on a leaderboard
