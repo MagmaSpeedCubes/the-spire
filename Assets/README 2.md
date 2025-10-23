@@ -70,22 +70,10 @@ Effect: 0s, 1s, 2s, 3s, 4s, 5s, 6s
 
 --COMMON CARDS-- (14-21) 
 
-Information Technology: Allows player to see certain stats during game
-Effect:
-No stats visible (0)
-basic player stats (1)
-basic enemy stats (2)
-ability to turn on/off shown stats (3)
-advanced player stats (4)
-advanced enemy stats (5)
-all debug stats (6)
-
-this is the only card in the game that the player has by default, is initialized to 1.
 
 
-
-Name TBD: Increases running power
-Effect: +0%, +10%, +20%, +30%, +40%, +50%, +75%  
+Name TBD: Increases movement power
+Effect: 
 
 
 
@@ -102,16 +90,12 @@ Effect: +0L, +2L, +4L, +6L, +8L, +10L, +15L
 Fists of Iron: Gives player fists a base breaking power
 Effect: 0, 1, 1.5, 2, 2.5, 3, 4
 
-Brass Knuckles: Increases player fists base damage level
-Effect: +0%, +100%, +150%, +200%, +250%, +300%, +400%
-
-Hurdler: Increases jump power
+Name TBD: Increases jump power
 Effect: +0%, +5%, +10%, +15%, +20%, +25%, +35%  
 
-Age of Tech: Increases effectiveness of tools
-Effect: +0%, +5%, +10%, +15%, +20%, +25%, +35%  
+Age of Tech: 
 
-Strength Training: Reduces effect of item weight on jump/run power
+Steroids: Reduces effect of item weight on jump/run speed
 Effect: +0%, -5%, -10%, -15%, -20%, -25%, -35%  
 
 Name TBD: Increases energy/health regeneration rate
@@ -128,16 +112,6 @@ Effect: +0%, +2%, +4%, +6%, +8%, +10%, +15%
 
 Saving Grace: When about to die, chance for brief period of immortality. 
 Effect: +0%, +5%, +10%, +15%, +20%, +25%, +35%  
-
-
---GAME FORMAT--
-Casual: climb the tower with no time constraints
-Rapid: 7 minutes, climb as high as possible
-Blitz: 3 minutes, climb as high as possible, checkpoints net +30s time
-Bullet: 1 minute, climb as high as possible, checkpoints net +10s time
-Time Trial: reach a checkpoint as fast as possible
-
-Player gets one respawn to the previous checkpoint in all modes except time trial unless disabled by badges
 
 
 Badges:
@@ -158,7 +132,6 @@ Multiplier: 2x
 Nightmare Mode
 -Checkpoints have no effect
 -Significantly increased enemy count
--
 Multiplier: 3x
 
 
@@ -197,5 +170,5 @@ Spire: top of the tower, no major risks but extremely challenging to navigate
 Checkpoints: base of spire, top of spire
 
 Reaching the top of the spire immediately ends a run
-runs are scored by the highest reached checkpoint
+runs are scored by time divided by the height of the highest reached checkpoint
 all runs that reach the top of the spire are recorded on a leaderboard
