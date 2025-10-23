@@ -19,6 +19,8 @@ MonoBehaviour:
   weight: 2.5
   volume: 5
   additionalStats:
-  - name: 
-    value: 0
-  modifiers: []
+  - name: breakingPower
+    value: 1
+  modifiers:
+  - name: breakableMaterial
+    effect: wood

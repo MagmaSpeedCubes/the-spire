@@ -86,54 +86,57 @@ public class ReflectionCaller : MonoBehaviour
 
 
     public static void SetVariableValue(string scriptName, string variableName, object newValue)
-    {
-        // Get the type
-        Type type = Type.GetType(scriptName);
-        if (type == null)
         {
-            Debug.LogError("Type not found: " + scriptName);
-            return;
-        }
-
-        // Try to find the field
-        FieldInfo field = type.GetField(variableName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance);
-
-        // Try to find the property if field not found
-        PropertyInfo property = null;
-        if (field == null)
-        {
-            property = type.GetProperty(variableName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance);
-            if (property == null)
+            Type type = Type.GetType(scriptName);
+            if (type == null)
             {
-                Debug.LogError("Variable or property not found: " + variableName);
+                Debug.LogError("Type not found: " + scriptName);
                 return;
             }
-        }
 
-        // Determine if static or instance
-        bool isStatic = field != null ? field.IsStatic : property.GetSetMethod(true).IsStatic;
-        object instance = null;
-        if (!isStatic)
-        {
-            instance = GameObject.FindObjectOfType(type);
-            if (instance == null)
+            // Try to find field or property
+            FieldInfo field = type.GetField(variableName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance);
+            PropertyInfo property = null;
+            if (field == null)
             {
-                Debug.LogError("Instance of " + scriptName + " not found in scene.");
-                return;
+                property = type.GetProperty(variableName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance);
+                if (property == null)
+                {
+                    Debug.LogError("Variable or property not found: " + variableName);
+                    return;
+                }
+            }
+
+            bool isStatic = field != null ? field.IsStatic : property.GetSetMethod(true).IsStatic;
+            object instance = null;
+            if (!isStatic)
+            {
+                instance = GameObject.FindObjectOfType(type);
+                if (instance == null)
+                {
+                    Debug.LogError("Instance of " + scriptName + " not found in scene.");
+                    return;
+                }
+            }
+
+            // Get target type (for conversion)
+            Type targetType = field != null ? field.FieldType : property.PropertyType;
+
+            try
+            {
+                // Convert value if needed
+                object convertedValue = Convert.ChangeType(newValue, targetType);
+                if (field != null)
+                    field.SetValue(instance, convertedValue);
+                else
+                    property.SetValue(instance, convertedValue);
+
+                Debug.Log($"Set {scriptName}.{variableName} = {convertedValue} ({targetType.Name})");
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Failed to set {variableName} on {scriptName}: {e.Message}");
             }
         }
-
-        // Set the value
-        if (field != null)
-        {
-            field.SetValue(instance, newValue);
-        }
-        else if (property != null)
-        {
-            property.SetValue(instance, newValue);
-        }
-
-        Debug.Log($"Set {scriptName}.{variableName} = {newValue}");
-    }
     
 }

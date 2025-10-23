@@ -25,6 +25,20 @@ public class ScrollbarInput : UIInput
 
     }
 
+    override protected string generateDisplayText(object value)
+    {
+        string displayText = base.generateDisplayText(value);
+        int infoLevel = ProfileStats.infoLevel;
+        if (infoLevel == 2)
+        {
+            displayText += "startValue: " + startValue + ", ";
+            displayText += "endValue: " + endValue + ", ";
+            displayText += "roundingPrecision: " + roundingPrecision + ", ";
+        }
+        return displayText;
+
+    }
+
 
     
     
