@@ -7,4 +7,5 @@ public class ProfileStats : MonoBehaviour
     // 0 = balanced
     // 1 = technical
     // 2 = debug
+    public static float masterVolume = 100f;
 }

@@ -1,25 +1,48 @@
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
+using System;
 
-public class Chart : MonoBehaviour
+
+[System.Serializable]
+public class Infographic : MonoBehaviour
 {
-    public string type;
-    public void setValue(float value)
-    {
 
+    public string type;
+    protected float value;
+    public void setValue(float newValue)
+    {
+        float oldValue = value;
+        value = newValue;
+        updateInfo(oldValue);
     }
 
     public float getValue()
     {
-        return 0;
+        return value;
     }
 
     public void changeValue(float difference)
     {
-
+        setValue(value + difference);
     }
 
-    protected void updateInfo()
+    virtual protected void updateInfo(float oldValue)
     {
-        
+
     }
 }
+[System.Serializable]
+public class Interval
+{
+    public float lowerBound;
+    public float upperBound;
+}
+
+[System.Serializable]
+public class IntervalFloat : Interval
+{
+    public float valueInInterval;
+
+}
+

@@ -12,9 +12,8 @@ public class UIInput : MonoBehaviour
     [SerializeField] protected Image imageInfographic;
     [SerializeField] protected List<NumberedSprite> infoSprites = new List<NumberedSprite>();
 
-    [SerializeField] protected Chart chart;
-    [SerializeField] protected TextMeshProUGUI textObject;
-    [SerializeField] protected List<float> textFontSizes = new List<float>();
+    [SerializeReference] protected Infographic[] infographics;
+    [SerializeField] protected TextMeshProUGUI mainText;
     protected int spriteIndex;
 
     
@@ -63,9 +62,9 @@ public class UIInput : MonoBehaviour
                     }
                 }
 
-                if (chart != null)
+                foreach (Infographic graph in infographics)
                 {
-                    chart.setValue(fv);
+                    graph?.setValue(fv);
                 }
                 break;
             case "int":
@@ -82,61 +81,59 @@ public class UIInput : MonoBehaviour
                     }
                 }
 
-                if (chart != null)
+                foreach (Infographic graph in infographics)
                 {
-                    chart.setValue(iv);
+                    graph?.setValue(iv);
                 }
                 break;
         }
 
 
-        textObject.text = generateDisplayText(value);
-        textObject.fontSize = textFontSizes[infoLevel + 1];
+        mainText.text = infoSprites[spriteIndex].name;   
 
 
 
     }
     
-    virtual protected string generateDisplayText(object value)
-    {
-        string displayText = "";
-        int infoLevel = ProfileStats.infoLevel;
+    // virtual protected string generateDisplayText(object value)
+    // {
+     
 
-        if (infoLevel == -1)
-        {
-            displayText = infoSprites[spriteIndex].name;
-        }
-        else if (infoLevel == 0)
-        {
-            displayText = infoSprites[spriteIndex].name;
-        }
-        else if (infoLevel == 1)
-        {
-            displayText = infoSprites[spriteIndex].name + ", " + prefix + value + suffix;
-        }
-        else if (infoLevel == 2)
-        {
+    //     if (infoLevel == -1)
+    //     {
+            
+    //     }
+    //     else if (infoLevel == 0)
+    //     {
+    //         displayText = infoSprites[spriteIndex].name;
+    //     }
+    //     else if (infoLevel == 1)
+    //     {
+    //         displayText = infoSprites[spriteIndex].name + ", " + prefix + value + suffix;
+    //     }
+    //     else if (infoLevel == 2)
+    //     {
 
-            displayText += "Value: " + infoSprites[spriteIndex].name + ", " + prefix + value + suffix + ", ";
-            displayText += "scriptOfVariable: " + scriptOfVariable + ", ";
-            displayText += "variableToChange: " + variableToChange + ", ";
-            displayText += "variableType: " + variableType + ", ";
-            if (chart != null)
-            {
-                displayText += "chartType: " + chart.type + ", ";
-            }
-            else
-            {
-                displayText += "chartType: None, ";
-            }
-            displayText += "textFontSizes: " + textFontSizes + ", ";
+    //         displayText += "Value: " + infoSprites[spriteIndex].name + ", " + prefix + value + suffix + ", ";
+    //         displayText += "scriptOfVariable: " + scriptOfVariable + ", ";
+    //         displayText += "variableToChange: " + variableToChange + ", ";
+    //         displayText += "variableType: " + variableType + ", ";
+    //         if (infographic != null)
+    //         {
+    //             displayText += "infographicType: " + infographic.type + ", ";
+    //         }
+    //         else
+    //         {
+    //             displayText += "infographicType: None, ";
+    //         }
+    //         displayText += "textFontSizes: " + textFontSizes + ", ";
             
 
 
-        }
+    //     }
 
-        return displayText;
+    //     return displayText;
         
-    }
+    // }
     
 }
