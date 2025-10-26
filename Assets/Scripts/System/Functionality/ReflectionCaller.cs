@@ -79,7 +79,7 @@ public class ReflectionCaller : MonoBehaviour
             ? field.GetValue(instance)
             : property.GetValue(instance);
 
-        Debug.Log($"Value of {scriptName}.{variableName} = {value}");
+        //Debug.Log($"Value of {scriptName}.{variableName} = {value}");
         return value;
     }
 

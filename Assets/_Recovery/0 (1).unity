@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 271102156}
   - component: {fileID: 271102157}
   m_Layer: 0
-  m_Name: InfoLevel
+  m_Name: Setting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170,9 +170,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScrollbarInput
   scriptOfVariable: ProfileStats
   variableToChange: infoLevel
+  variableType: int
+  prefix: 'Level '
+  suffix: 
+  imageInfographic: {fileID: 542104759}
+  infoSprites:
+  - name: Aesthetic
+    sprite: {fileID: 21300000, guid: 6db4b59ab6104401689ea9bfde99a756, type: 3}
+    beginValue: -1
+    endValue: -1
+  - name: Balanced
+    sprite: {fileID: 21300000, guid: aeb944754d01748f1891141b7b39262e, type: 3}
+    beginValue: 0
+    endValue: 0
+  - name: Technical
+    sprite: {fileID: 21300000, guid: 8ac1531d4277b4027bcc4d2130119dcb, type: 3}
+    beginValue: 1
+    endValue: 1
+  - name: Debug
+    sprite: {fileID: 21300000, guid: 613d54686e7f24697b8eb121acbbc03d, type: 3}
+    beginValue: 2
+    endValue: 2
   infographics:
   - {fileID: 332126159}
-  - {fileID: 542104761}
   mainText: {fileID: 1197924593}
   scrollbar: {fileID: 927835501}
   startValue: -1
@@ -190,8 +210,6 @@ GameObject:
   - component: {fileID: 332126161}
   - component: {fileID: 332126160}
   - component: {fileID: 332126159}
-  - component: {fileID: 332126163}
-  - component: {fileID: 332126162}
   m_Layer: 5
   m_Name: NumberInfographic
   m_TagString: Untagged
@@ -215,8 +233,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 911, y: 0}
-  m_SizeDelta: {x: 640, y: 144}
+  m_AnchoredPosition: {x: 1240, y: 0}
+  m_SizeDelta: {x: 1280, y: 144}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &332126159
 MonoBehaviour:
@@ -255,7 +273,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level 0
+  m_text: Info Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 328d41a9e2555441192f55d22257bcd1, type: 2}
   m_sharedMaterial: {fileID: -2494410886900326756, guid: 328d41a9e2555441192f55d22257bcd1, type: 2}
@@ -334,33 +352,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 332126157}
   m_CullTransparentMesh: 1
---- !u!114 &332126162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 332126157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2e100231df58481893338b61e41525e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InfoLevelRestrictor
-  infoIntervals:
-  - lowerBound: 1
-    upperBound: 999
---- !u!225 &332126163
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 332126157}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &406867126
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,7 +820,6 @@ GameObject:
   - component: {fileID: 542104758}
   - component: {fileID: 542104760}
   - component: {fileID: 542104759}
-  - component: {fileID: 542104761}
   m_Layer: 5
   m_Name: ImageInfographic
   m_TagString: Untagged
@@ -894,37 +884,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542104757}
   m_CullTransparentMesh: 1
---- !u!114 &542104761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 542104757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51d90326f810e409598324608aa4ea88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ImageInfographic
-  type: 
-  infoSprites:
-  - name: Aesthetic
-    sprite: {fileID: 21300000, guid: 6db4b59ab6104401689ea9bfde99a756, type: 3}
-    beginValue: -1
-    endValue: -1
-  - name: Balanced
-    sprite: {fileID: 21300000, guid: aeb944754d01748f1891141b7b39262e, type: 3}
-    beginValue: 0
-    endValue: 0
-  - name: Technical
-    sprite: {fileID: 21300000, guid: 8ac1531d4277b4027bcc4d2130119dcb, type: 3}
-    beginValue: 1
-    endValue: 1
-  - name: Debug
-    sprite: {fileID: 21300000, guid: 613d54686e7f24697b8eb121acbbc03d, type: 3}
-    beginValue: 2
-    endValue: 2
-  subtitle: {fileID: 1197924593}
 --- !u!1 &648795208
 GameObject:
   m_ObjectHideFlags: 0
@@ -1778,7 +1737,6 @@ GameObject:
   - component: {fileID: 1197924592}
   - component: {fileID: 1197924594}
   - component: {fileID: 1197924593}
-  - component: {fileID: 1197924596}
   m_Layer: 5
   m_Name: InfoText
   m_TagString: Untagged
@@ -1802,8 +1760,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1560, y: 0}
-  m_SizeDelta: {x: 640, y: 144}
+  m_AnchoredPosition: {x: 1240, y: 0}
+  m_SizeDelta: {x: 1280, y: 144}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1197924593
 MonoBehaviour:
@@ -1904,18 +1862,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1197924591}
   m_CullTransparentMesh: 1
---- !u!225 &1197924596
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1197924591}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1229128245
 GameObject:
   m_ObjectHideFlags: 0

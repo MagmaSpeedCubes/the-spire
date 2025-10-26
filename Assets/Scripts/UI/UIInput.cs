@@ -7,10 +7,8 @@ public class UIInput : MonoBehaviour
 {
     [SerializeField] protected string scriptOfVariable;
     [SerializeField] protected string variableToChange;
+
     [SerializeField] protected string variableType;
-    [SerializeField] protected string prefix, suffix;
-    [SerializeField] protected Image imageInfographic;
-    [SerializeField] protected List<NumberedSprite> infoSprites = new List<NumberedSprite>();
 
     [SerializeReference] protected Infographic[] infographics;
     [SerializeField] protected TextMeshProUGUI mainText;
@@ -24,6 +22,7 @@ public class UIInput : MonoBehaviour
     protected void setValue(object value)
     {
         ReflectionCaller.SetVariableValue(scriptOfVariable, variableToChange, (float)value);
+        ProfileStats.SavePrefs();
         updateInfographics(value);
     }
 
@@ -44,23 +43,14 @@ public class UIInput : MonoBehaviour
     protected void updateInfographics(object value)
     {
 
-        int infoLevel = ProfileStats.infoLevel;
-        //show basic stats without using numbers
+
+
         switch (variableType)
         {
             case "float":
                 float fv = (float)value;
 
-                foreach (NumberedSprite spr in infoSprites)
-                {
-                    
-                    if (fv >= spr.beginValue && fv <= spr.endValue)
-                    {
-                        imageInfographic.sprite = spr.sprite;
-                        spriteIndex = infoSprites.IndexOf(spr);
-                        break;
-                    }
-                }
+
 
                 foreach (Infographic graph in infographics)
                 {
@@ -70,28 +60,15 @@ public class UIInput : MonoBehaviour
             case "int":
                 int iv = (int)value;
 
-                foreach (NumberedSprite spr in infoSprites)
-                {
-                    
-                    if (iv >= spr.beginValue && iv <= spr.endValue)
-                    {
-                        imageInfographic.sprite = spr.sprite;
-                        spriteIndex = infoSprites.IndexOf(spr);
-                        break;
-                    }
-                }
-
                 foreach (Infographic graph in infographics)
                 {
                     graph?.setValue(iv);
+
                 }
+
                 break;
         }
-
-
-        mainText.text = infoSprites[spriteIndex].name;   
-
-
+        
 
     }
     

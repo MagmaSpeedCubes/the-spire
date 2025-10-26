@@ -18,9 +18,11 @@ public class NumberText : Infographic
     {
         base.updateInfo(oldValue);
 
-        int roundingPrecision = getRoundingPrecision();
-        float roundedValue = Mathf.Floor(value / roundingPrecision + 0.5f) * roundingPrecision;
-        animateToValue(oldValue, roundedValue, 0.5f);
+        float roundingPrecision = getRoundingPrecision();
+        // Debug.Log("RP:" + roundingPrecision);
+        float roundedValue = (int)Mathf.Round(value / roundingPrecision) * roundingPrecision;
+        text.text = prefix + roundedValue + suffix;
+        // animateToValue(oldValue, roundedValue, 0.5f);
 
     }
 
@@ -38,12 +40,13 @@ public class NumberText : Infographic
         {
             float progression = elapsedTime / time;
             float midValue = oldValue + (newValue - oldValue) * progression;
-            int roundingPrecision = getRoundingPrecision();
+            float roundingPrecision = getRoundingPrecision();
             float roundedMidValue = Mathf.Floor(midValue / roundingPrecision + 0.5f) * roundingPrecision;
 
             text.text = prefix + midValue + suffix;
+            elapsedTime += Time.deltaTime;
         }
-        text.text = prefix + newValue + suffix;
+        
 
 
 
@@ -51,17 +54,23 @@ public class NumberText : Infographic
         yield return null;
     }
 
-    protected int getRoundingPrecision()
+    protected float getRoundingPrecision()
     {
-        int roundingPrecision = 1;
+        float roundingPrecision = 1f;
         foreach (IntervalFloat rfr in roundingPrecisionList)
         {
+            // Debug.Log("Checking");
             int infoLevel = ProfileStats.infoLevel;
-            if (infoLevel >= rfr.lowerBound || infoLevel <= rfr.upperBound)
+            // Debug.Log("Info Level: " + infoLevel);
+            if (infoLevel >= rfr.lowerBound && infoLevel <= rfr.upperBound)
             {
-                roundingPrecision = (int)rfr.valueInInterval;
+                
+                // Debug.Log(infoLevel + ">= " + rfr.lowerBound);
+                // Debug.Log(infoLevel + "<= " + rfr.upperBound);
+                roundingPrecision = rfr.valueInInterval;
                 break;
             }
+
 
 
         }

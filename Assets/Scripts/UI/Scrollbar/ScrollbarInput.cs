@@ -17,9 +17,6 @@ public class ScrollbarInput : UIInput
 
         raw = raw * endValue + (1 - raw) * startValue;
 
-        raw /= roundingPrecision;
-        raw = Mathf.Floor(raw + 0.5f);
-        raw *= roundingPrecision;
         return raw;
 
 
