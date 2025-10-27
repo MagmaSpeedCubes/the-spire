@@ -1,17 +1,22 @@
+using UnityEngine.UI;
 using UnityEngine;
-
 public class NavigationButton : MonoBehaviour
 {
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] protected Canvas[] closeCanvas;
+    [SerializeField] protected Canvas[] openCanvas;
+
+    public void onClick()
     {
+        SoundHandler.playSound("buttonPress", ProfileStats.masterVolume * ProfileStats.uiVolume / 10000f);
+        foreach (Canvas c in closeCanvas)
+        {
+            c.enabled = false;
+        }
+        foreach (Canvas c in openCanvas)
+        {
+            c.enabled = true;
+        }
         
     }
 }

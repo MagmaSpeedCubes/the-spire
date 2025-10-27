@@ -9,6 +9,7 @@ public class ScrollbarInput : UIInput
     public void OnScrollbarMove()
     {
         base.setValue(CalculateScrollbarValue());
+        SoundHandler.playSound("scrollbarMove", ProfileStats.masterVolume * ProfileStats.uiVolume / 10000f);
     }
 
     protected float CalculateScrollbarValue()
