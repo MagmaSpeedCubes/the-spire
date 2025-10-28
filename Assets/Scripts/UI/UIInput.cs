@@ -17,7 +17,9 @@ public class UIInput : MonoBehaviour
     
     void Update()
     {
+        // Debug.Log("Updating " + variableToChange);
         updateInfographics(ReflectionCaller.GetVariableValue(scriptOfVariable, variableToChange));
+        // Debug.Log("Update display of " + variableToChange + " to " + ReflectionCaller.GetVariableValue(scriptOfVariable, variableToChange));
     }
     protected void setValue(object value)
     {
@@ -55,6 +57,7 @@ public class UIInput : MonoBehaviour
                 foreach (Infographic graph in infographics)
                 {
                     graph?.setValue(fv);
+
                 }
                 break;
             case "int":

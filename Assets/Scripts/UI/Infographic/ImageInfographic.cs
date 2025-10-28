@@ -10,6 +10,8 @@ public class ImageInfographic : Infographic
     [SerializeField] protected List<NumberedSprite> infoSprites = new List<NumberedSprite>();
     [SerializeField] protected TextMeshProUGUI subtitle;
 
+
+
     override protected void updateInfo(float oldValue)
     {
 
@@ -25,6 +27,7 @@ public class ImageInfographic : Infographic
                 break;
             }
         }
+        // Debug.Log("Value" + value);
         if (subtitle != null)
         {
             subtitle.text = infoSprites[spriteIndex].name;

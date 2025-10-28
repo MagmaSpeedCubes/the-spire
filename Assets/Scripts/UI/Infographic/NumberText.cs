@@ -60,7 +60,7 @@ public class NumberText : Infographic
         foreach (IntervalFloat rfr in roundingPrecisionList)
         {
             // Debug.Log("Checking");
-            int infoLevel = ProfileStats.infoLevel;
+            int infoLevel = (int)ProfileStats.infoLevel;
             // Debug.Log("Info Level: " + infoLevel);
             if (infoLevel >= rfr.lowerBound && infoLevel <= rfr.upperBound)
             {

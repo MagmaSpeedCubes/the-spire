@@ -6,6 +6,16 @@ public class ScrollbarInput : UIInput
     [SerializeField] protected Scrollbar scrollbar;
     [SerializeField] protected float startValue, endValue;
     [SerializeField] protected float roundingPrecision;
+
+    void Start()
+    {
+        setValue((float)ReflectionCaller.GetVariableValue(scriptOfVariable, variableToChange));
+    }
+    void setValue(float value)
+    {
+        float progression = (value - startValue) / (endValue - startValue);
+        scrollbar.value = progression;
+    }
     public void OnScrollbarMove()
     {
         base.setValue(CalculateScrollbarValue());

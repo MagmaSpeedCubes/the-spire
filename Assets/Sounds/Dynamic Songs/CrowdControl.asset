@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: CrowdControl
+  m_EditorClassIdentifier: Assembly-CSharp::DynamicSong
+  songName: Crowd Control
+  loop: {fileID: 8300000, guid: 3da93e4c9e94f4aa0b9a6c5dbeb68380, type: 3}
+  beginLoopTime: 0.2
+  endLoopTime: 160.2
+  beatsPerMeasure: 5
+  beatType: 0.125
+  bpm: 180
