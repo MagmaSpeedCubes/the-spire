@@ -68,48 +68,29 @@ a sixth star can be gained by using an upgrade token and gems
 Name: What the effect does
 Effect: 0s, 1s, 2s, 3s, 4s, 5s, 6s
 
---COMMON CARDS-- (14-21) 
-
-Information Technology: Allows player to see certain stats during game
-Effect:
-No stats visible (0)
-basic player stats (1)
-basic enemy stats (2)
-ability to turn on/off shown stats (3)
-advanced player stats (4)
-advanced enemy stats (5)
-all debug stats (6)
-
-this is the only card in the game that the player has by default, is initialized to 1.
-
-
+--COMMON CARDS-- (7) 
+Mainly affects player stats
 
 Name TBD: Increases running power
 Effect: +0%, +10%, +20%, +30%, +40%, +50%, +75%  
 
-
+Hurdler: Increases jump power
+Effect: +0%, +5%, +10%, +15%, +20%, +25%, +35%  
 
 Name TBD: Increases mining speed
-Effect: 
-
-
-
---RARE CARDS-- (7) 
-
-Infinity Bag: Increases the volume limit for carrying items
-Effect: +0L, +2L, +4L, +6L, +8L, +10L, +15L
-
-Fists of Iron: Gives player fists a base breaking power
-Effect: 0, 1, 1.5, 2, 2.5, 3, 4
+Effect: +0%, +10%, +20%, +30%, +40%, +50%, +75%  
 
 Brass Knuckles: Increases player fists base damage level
 Effect: +0%, +100%, +150%, +200%, +250%, +300%, +400%
 
-Hurdler: Increases jump power
-Effect: +0%, +5%, +10%, +15%, +20%, +25%, +35%  
+Panzer: Increases maximum health
+Effect: +0%, +10%, +20%, +30%, +40%, +50%, +75%  
 
-Age of Tech: Increases effectiveness of tools
-Effect: +0%, +5%, +10%, +15%, +20%, +25%, +35%  
+
+
+--RARE CARDS-- (4) 
+Mainly affects higher level stats
+
 
 Strength Training: Reduces effect of item weight on jump/run power
 Effect: +0%, -5%, -10%, -15%, -20%, -25%, -35%  
@@ -118,7 +99,10 @@ Name TBD: Increases energy/health regeneration rate
 Effect: +0%, +5%, +10%, +15%, +20%, +25%, +35%  
 
 
+
+
 --LEGENDARY CARDS-- (3)
+Directly simplifies gameplay
 
 False Start: Decreases the final run time 
 Effect: -0s, -0.5s, -1s, -1.5s, -2s, -2.5s, -4s
@@ -199,3 +183,12 @@ Checkpoints: base of spire, top of spire
 Reaching the top of the spire immediately ends a run
 runs are scored by the highest reached checkpoint
 all runs that reach the top of the spire are recorded on a leaderboard
+
+
+--UI Improvements--
+
+Info displays 
+Aesthetic: displays only most crucial info, avoids using numbers
+Balanced: displays helpful info, default
+Technical: display as much info as possible
+

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSong
   songName: Crowd Control
   loop: {fileID: 8300000, guid: 3da93e4c9e94f4aa0b9a6c5dbeb68380, type: 3}
-  beginLoopTime: 0.2
-  endLoopTime: 160.2
+  beginLoopTime: 0.3
+  endLoopTime: 160.3
   beatsPerMeasure: 5
   beatType: 0.125
   bpm: 180

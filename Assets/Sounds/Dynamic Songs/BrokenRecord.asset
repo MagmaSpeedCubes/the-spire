@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DynamicSong
   songName: Broken Record
   loop: {fileID: 8300000, guid: 922b051d1503140cd9a528e5ff1a65ff, type: 3}
-  beginLoopTime: 6.5
-  endLoopTime: 258.5
+  beginLoopTime: 6.8
+  endLoopTime: 258.8
   beatsPerMeasure: 4
   beatType: 0.25
   bpm: 160
