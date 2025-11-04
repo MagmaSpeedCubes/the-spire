@@ -153,32 +153,58 @@ Multiplier: 3x
 
 (in order from bottom to top)
 
-Base Camp: Start location
-no checkpoints, rather spawn locations
+lore: 
 
-Sector 1: secured by magma labs, entirely safe
-Checkpoints: tower, tower east, tower west, 
+Block Town: Start location
+The point where player starts, several starting points
 
-Sector 2: secured by magma labs, presents minimal risks 
-Checkpoints: eastern outpost, western outpost
+Sector 1, Spire Mall: secure, entirely safe
+Subsections: food court, tech store, department store, main atrium
 
-Sector 3: secured by magma labs, presents moderate risks
-Checkpoints: outpost 3
 
-Sector 4: unsecured, presents risks
-Checkpoints: Office 314, Jaseer's hut
+Sector 2: Remote Town, minimal risks
+50-125m 
+Subsections: Town hall, bridge, 
+Risks: power failure, earthquake
 
-Sector 5: presents high risks
-Checkpoints: Apex outpost
 
-Sector 6: presents extreme risks
-Checkpoints: Abandoned outpost
+Sector 3: Data Center
+125-250m
+Subsections: Server room, board room, security, cooling/power
+Risks: power failure(high), detection, heat stroke
 
-Sector 7: presents extreme risks
-Checkpoints: NONE
+Sector 4: Warehouse
+250-500m
+Subsections: conveyors, shelves, robots, exit
+Risks: fatigue(high), heat stroke, detection
 
-Spire: top of the tower, no major risks but extremely challenging to navigate
-Checkpoints: base of spire, top of spire
+Sector 5: Abandoned Offices
+500-700m
+Subsections: snack bar, elevator shaft, cubicles, board room
+Risks: detection
+
+
+Sector 6: Power Plant
+700-900m
+Subsections: the core, control room, mechanical room, 
+10
+
+Sector 7: The Laboratory
+900-1200m
+Subsections: makerspace, chemical lab, 
+11
+
+The Spire: top of the tower, no enemy risks but extremely challenging to navigate
+1200-1500m
+Subsections: segments of the spire
+12
+
+All risks: 
+power failure: significantly darkens the tower for the rest of the run, no electronics work
+earthquake: all bridges between subsections of the same level collapse
+detection: all spire doors immediately lock, requiring a high enough level keycard to access
+heat stroke: slowly take damage while in effect, causes permanent fatigue if sustained
+fatigue: decreases moving, jumping, and attacking power. 
 
 Reaching the top of the spire immediately ends a run
 runs are scored by the highest reached checkpoint
